@@ -1,0 +1,272 @@
+LIST:
+
+LUMEN:
+Bombarding http://localhost:8000/usuarios/query for 10s using 500 connections
+[========================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       332.01      56.17     403.24
+  Latency         1.89s      4.48s     17.41s
+  HTTP codes:
+    1xx - 0, 2xx - 3812, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:   339.78KB/s
+
+LUMEN apache php 7.2:
+Bombarding http://lumen.teste/usuarios/query for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       750.28     192.57    1549.54
+  Latency      659.82ms      1.64s     14.32s
+  HTTP codes:
+    1xx - 0, 2xx - 7972, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:   295.84KB/s
+
+
+SYMFONY 4:
+Bombarding http://localhost:5000/usuarios for 10s using 500 connections
+[========================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       195.01      21.67     250.63
+  Latency         3.03s      5.66s     18.19s
+  HTTP codes:
+    1xx - 0, 2xx - 2451, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:   144.65KB/s
+
+
+EXPRESS:
+Bombarding http://localhost:3000/usuarios for 10s using 500 connections
+[========================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      1863.44     525.53    3008.06
+  Latency      263.98ms    68.18ms      1.39s
+  HTTP codes:
+    1xx - 0, 2xx - 19047, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     1.19MB/s
+
+
+LOOPBACK 3:
+Bombarding http://localhost:3000/api/usuario for 10s using 500 connections
+[========================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      1656.08     452.20    3327.90
+  Latency      295.95ms    38.94ms      1.33s
+  HTTP codes:
+    1xx - 0, 2xx - 16974, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     1.15MB/s
+
+
+RAILS 5 API:
+Bombarding http://localhost:3000/usuarios for 10s using 500 connections
+[========================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       390.10      62.97     501.85
+  Latency         2.75s      8.05s     37.42s
+  HTTP codes:
+    1xx - 0, 2xx - 4399, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 4
+  Errors:
+    the server closed connection before returning the first response byte. Make sure the server returns 'Connection: close' response header before closing the connection - 4
+  Throughput:    91.24KB/s
+
+
+GO ECHO GORM:
+Bombarding http://localhost:8000/usuarios for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec     26181.43    3876.45   42974.94
+  Latency       19.11ms    12.67ms   340.50ms
+  HTTP codes:
+    1xx - 0, 2xx - 261502, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    10.55MB/s
+
+
+GO IRIS XORM:
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      5856.50    5156.04   35887.93
+  Latency       85.24ms   176.81ms      2.36s
+  HTTP codes:
+    1xx - 0, 2xx - 58881, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     2.77MB/s
+
+
+
+PYTHON FLASK:
+Bombarding http://localhost:5000/usuarios for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       324.61      47.45     401.26
+  Latency         1.91s      4.61s     17.62s
+  HTTP codes:
+    1xx - 0, 2xx - 3756, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:   126.94KB/s
+
+
+PHALCON:
+Bombarding http://phalcon.teste/usuarios for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      1506.15     271.70    2453.20
+  Latency      472.22ms      2.87s     31.71s
+  HTTP codes:
+    1xx - 0, 2xx - 15583, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:   243.41KB/s
+
+
+UPDATE:
+
+LUMEN:
+Bombarding http://localhost:8000/usuarios/1 for 10s using 500 connections
+[========================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       358.36      32.04     401.87
+  Latency         1.68s      4.09s     17.44s
+  HTTP codes:
+    1xx - 0, 2xx - 4091, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:   158.09KB/s
+
+
+LUMEN apache php 7.2:
+Bombarding http://lumen.teste/usuarios/2 for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       669.99     278.07    1900.91
+  Latency      736.90ms      1.23s     14.89s
+  HTTP codes:
+    1xx - 0, 2xx - 7160, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:   276.47KB/s
+
+
+SYMFONY 4:
+Bombarding http://localhost:5000/usuarios/1 for 10s using 500 connections
+[========================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec         4.51      13.63      50.28
+  Latency        48.83s     20.91s      1.36m
+  HTTP codes:
+    1xx - 0, 2xx - 84, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 461
+  Errors:
+    the server closed connection before returning the first response byte. Make sure the server returns 'Connection: close' response header before closing the connection - 461
+  Throughput:     7.59KB/s
+
+
+EXPRESS:
+Bombarding http://localhost:3000/usuarios/1 for 10s using 500 connections
+[========================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      1467.77     355.54    3179.20
+  Latency      332.68ms    71.99ms      1.47s
+  HTTP codes:
+    1xx - 0, 2xx - 15119, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     0.92MB/s
+
+
+LOOPBACK 3:
+Bombarding http://localhost:3000/api/usuario/2 for 10s using 500 connections
+[========================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec        30.34      90.66     499.19
+  Latency         6.81s      4.36s     11.05s
+  HTTP codes:
+    1xx - 0, 2xx - 298, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 500
+  Errors:
+    the server closed connection before returning the first response byte. Make sure the server returns 'Connection: close' response header before closing the connection - 500
+  Throughput:    68.13KB/s
+
+
+RAILS 5 API:
+Bombarding http://localhost:3000/usuarios/5 for 10s using 500 connections
+[========================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       266.41      49.63     400.10
+  Latency         4.39s     10.49s     39.66s
+  HTTP codes:
+    1xx - 0, 2xx - 3132, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 30
+  Errors:
+    the server closed connection before returning the first response byte. Make sure the server returns 'Connection: close' response header before closing the connection - 30
+  Throughput:    61.50KB/s
+
+
+GO ECHO GORM:
+Bombarding http://localhost:8000/usuarios/2 for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      5023.64    2249.54    9626.48
+  Latency      101.47ms   230.17ms      3.31s
+  HTTP codes:
+    1xx - 0, 2xx - 50771, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     2.05MB/s
+
+
+GO IRIS XORM:
+Bombarding http://localhost:8000/usuarios/1 for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec     16650.17    5345.61   35792.92
+  Latency       30.41ms   117.22ms      3.21s
+  HTTP codes:
+    1xx - 0, 2xx - 167276, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     7.83MB/s
+
+
+
+PYTHON FLASK:
+Bombarding http://localhost:5000/usuarios/2 for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       190.14      26.77     250.52
+  Latency         3.05s      5.58s     17.38s
+  HTTP codes:
+    1xx - 0, 2xx - 2403, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    53.27KB/s
+
+
+PHALCON:
+Bombarding http://phalcon.teste/usuarios/2 for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       726.26     585.07    3761.84
+  Latency         1.00s      3.96s     31.67s
+  HTTP codes:
+    1xx - 0, 2xx - 7679, 3xx - 0, 4xx - 0, 5xx - 30
+    others - 45
+  Errors:
+    the server closed connection before returning the first response byte. Make sure the server returns 'Connection: close' response header before closing the connection - 45
+  Throughput:   128.15KB/s
