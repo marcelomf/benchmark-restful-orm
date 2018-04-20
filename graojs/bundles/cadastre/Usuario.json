@@ -1,0 +1,48 @@
+{
+    "bundle": "cadastre",
+    "label": "Usuarios",
+    "description": "All users",
+    "refLabel": "nome",
+    "fields": {
+        "id": {
+            "label": "Id",
+            "type": "primary"
+        },
+        "nome": {
+            "label": "Nome",
+            "type": "input",
+            "required": true,
+            "isList": true,
+            "isFilter": true
+        },
+	"login": {
+            "label": "Login",
+            "type": "input",
+            "unique": true,
+            "required": true,
+            "isList": true,
+            "isFilter": true
+        },
+	"senha": {
+            "label": "Senha",
+            "type": "input",
+            "unique": true,
+            "required": true,
+            "isList": true,
+            "isFilter": true
+        },
+	"email": {
+            "label": "Email",
+            "type": "email",
+            "unique": true,
+            "required": true,
+            "isList": true,
+            "isFilter": true
+        },
+        "permissao": {
+            "label": "Permissao",
+            "type": "radio",
+            "options": { "leitura": "Leitura", "escrita": "Escrita" }
+        }
+    }
+}

@@ -64,6 +64,19 @@ Statistics        Avg      Stdev        Max
   Throughput:     1.15MB/s
 
 
+GRAOJS:
+Bombarding http://localhost:8015/service/usuario for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      2034.23    3198.44   19998.39
+  Latency      243.13ms    30.31ms      1.28s
+  HTTP codes:
+    1xx - 0, 2xx - 20669, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     1.46MB/s
+
+
 RAILS 5 API:
 Bombarding http://localhost:3000/usuarios for 10s using 500 connections
 [========================================================================================================================================================================================================================================] 10s
@@ -200,6 +213,19 @@ Statistics        Avg      Stdev        Max
   Errors:
     the server closed connection before returning the first response byte. Make sure the server returns 'Connection: close' response header before closing the connection - 500
   Throughput:    68.13KB/s
+
+
+GRAOJS:
+Bombarding http://localhost:8015/service/usuario/5ada4db35ae5cd59531a197b for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      1126.83    1714.85    8981.17
+  Latency      437.84ms   135.44ms      1.69s
+  HTTP codes:
+    1xx - 0, 2xx - 11753, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     0.90MB/s
 
 
 RAILS 5 API:

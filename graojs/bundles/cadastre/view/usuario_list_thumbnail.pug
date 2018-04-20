@@ -1,0 +1,29 @@
+.row
+  .col-md-12(collapse="notFilter")
+    include usuario_filter
+  .col-md-12
+    button.btn.btn-default.btn-block.btn-xs(ng-click="notFilter = !notFilter")=__('FILTER')
+.row
+  .col-md-12
+    .row
+      .col-md-3(ng-repeat="usuario in dataList.data")
+        .thumbnail
+          .caption
+            p {{ usuario.nome }} 
+
+            p {{ usuario.login }} 
+
+            p {{ usuario.senha }} 
+
+            p {{ usuario.email }} 
+
+            button.btn.btn-primary.btn-sm.icon.icon-edit(type='button', ng-click='selectUsuario($index); share.window("createOrUpdateUsuario");')=__('Edit')
+            | 
+            button.btn.btn-danger.btn-sm.icon.icon-trash(type='button', ng-click='destroyUsuarioByIndex($index); queryUsuario();')=__('Remove')
+            | 
+            button.btn.btn-info.btn-sm.icon.icon-plus(type='button', ng-click='selectUsuario($index); share.window("showUsuario");')=__('Show')
+.row
+  .col-md-12.text-right
+    p=__('Listing {{ dataList.status.listing }} of {{ dataList.status.filtered }} filtered on {{ dataList.status.totality }} registers')
+  .col-md-12
+    button.btn.btn-default.btn-lg.btn-block(ng-click='queryMoreUsuario(); countUsuario();')=__('MORE')

@@ -1,0 +1,46 @@
+
+mixin form_fields_usuario()
+
+  .form-group(ng-class="{'has-error': errors.usuario.nome}")
+    input.form-control(type='text', ng-model="usuario.nome", placeholder=__('Nome')) 
+    span.help-block.ng-hide(ng-show="errors.usuario.nome")='{{ errors.usuario.nome }}'
+
+  .form-group(ng-class="{'has-error': errors.usuario.login}")
+    input.form-control(type='text', ng-model="usuario.login", placeholder=__('Login')) 
+    span.help-block.ng-hide(ng-show="errors.usuario.login")='{{ errors.usuario.login }}'
+
+  .form-group(ng-class="{'has-error': errors.usuario.senha}")
+    input.form-control(type='text', ng-model="usuario.senha", placeholder=__('Senha')) 
+    span.help-block.ng-hide(ng-show="errors.usuario.senha")='{{ errors.usuario.senha }}'
+
+  .form-group(ng-class="{'has-error': errors.usuario.email}")
+    input.form-control(type='text', ng-model="usuario.email", placeholder=__('Email')) 
+    span.help-block.ng-hide(ng-show="errors.usuario.email")='{{ errors.usuario.email }}'
+
+  .form-group(ng-class="{'has-error': errors.usuario.permissao}")
+    label.radio-inline
+      input(type='radio', ng-model="usuario.permissao" value='leitura') 
+      =__('Leitura')
+    label.radio-inline
+      input(type='radio', ng-model="usuario.permissao" value='escrita') 
+      =__('Escrita')
+    span.help-block.ng-hide(ng-show="errors.usuario.permissao")='{{ errors.usuario.permissao }}'
+
+mixin filter_fields_usuario() 
+
+  .form-group(ng-class="{'has-error': errors.dataList.filter.nome}")
+    input.form-control(type='text', ng-model="dataList.filter.nome", placeholder=__('Nome')) 
+    span.help-block.ng-hide(ng-show="errors.dataList.filter.nome")='{{ errors.dataList.filter.nome }}'
+
+  .form-group(ng-class="{'has-error': errors.dataList.filter.login}")
+    input.form-control(type='text', ng-model="dataList.filter.login", placeholder=__('Login')) 
+    span.help-block.ng-hide(ng-show="errors.dataList.filter.login")='{{ errors.dataList.filter.login }}'
+
+  .form-group(ng-class="{'has-error': errors.dataList.filter.senha}")
+    input.form-control(type='text', ng-model="dataList.filter.senha", placeholder=__('Senha')) 
+    span.help-block.ng-hide(ng-show="errors.dataList.filter.senha")='{{ errors.dataList.filter.senha }}'
+
+  .form-group(ng-class="{'has-error': errors.dataList.filter.email}")
+    input.form-control(type='text', ng-model="dataList.filter.email", placeholder=__('Email')) 
+    span.help-block.ng-hide(ng-show="errors.dataList.filter.email")='{{ errors.dataList.filter.email }}'
+         

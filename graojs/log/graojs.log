@@ -1,0 +1,4 @@
+2018-04-20T20:29:15.931Z - error: UsuarioController: Usuario validation failed: email: Path `email` is required., senha: Path `senha` is required., login: Path `login` is required., nome: Path `nome` is required.
+2018-04-20T20:33:09.895Z - error: PassportController: Access Denied.
+2018-04-20T20:33:13.830Z - error: PassportController: Access Denied.
+2018-04-20T20:33:14.877Z - error: PassportController: Access Denied.

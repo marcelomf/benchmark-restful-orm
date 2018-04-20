@@ -1,0 +1,17 @@
+{
+  "name": "graojs",
+  "description": "GraoJS Benchmark",
+  "version": "0.0.1",
+  "author": "Marcelo Fleury <marcelomf@gmail.com>",
+  "readme" : "README.md",
+  "dependencies": {
+      "graojs": "0.0.x",
+      "passport-local": "1.0.0",
+      "passport-strategy": "x"
+  },
+  "keywords": [
+    "grao",
+    "graojs"
+  ],
+  "engines": { "node": ">= 0.8.x" }
+}

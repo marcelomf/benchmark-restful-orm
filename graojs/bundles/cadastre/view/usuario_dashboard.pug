@@ -1,0 +1,25 @@
+
+extends /frontend/theme/layout
+block content
+  .container(ng-controller='UsuarioPublicController', ng-init='clearUsuario(); share.window("listUsuario");')
+    .row
+      .col-md-12
+        h2=__('usuarios')
+    .row
+      .col-md-12
+        include usuario_dashboard_actions
+    .row(ng-switch='share.selectWindow')
+      .col-md-12(ng-switch-when="listUsuario")
+        include usuario_list
+      .col-md-6.col-md-offset-3(ng-switch-when="createOrUpdateUsuario")
+        include usuario_form
+        +form_usuario(true)
+      .col-md-6.col-md-offset-3(ng-switch-when="showUsuario")
+        include usuario_show
+
+    .row
+      .col-md-12
+        include usuario_dashboard_actions
+
+    script(src='/js/usuario/UsuarioPublicFactory.js', type='text/javascript', charset='utf-8').
+    script(src='/js/usuario/UsuarioPublicController.js', type='text/javascript', charset='utf-8').

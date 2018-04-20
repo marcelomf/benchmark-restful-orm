@@ -1,0 +1,7 @@
+h3=__('Filters')
+form.form-inline(role='form')
+  include user_fields
+  +filter_fields_user()
+  button.btn.btn-warning(type='button', ng-click='queryUser(); countUser();')=__('Filter')
+  | 
+  button.btn.btn-danger(type='button', ng-click='queryUser("reset"); countUser();')=__('Reset')

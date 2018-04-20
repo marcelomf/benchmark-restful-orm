@@ -1,0 +1,28 @@
+h3=__('Usuario')
+  small  {{ usuario._id }}
+.table-responsive
+  table.table.table-striped
+    tr
+      td=__('Id')
+      td {{ usuario.id }}
+    tr
+      td=__('Nome')
+      td {{ usuario.nome }}
+    tr
+      td=__('Login')
+      td {{ usuario.login }}
+    tr
+      td=__('Senha')
+      td {{ usuario.senha }}
+    tr
+      td=__('Email')
+      td {{ usuario.email }}
+    tr
+      td=__('Permissao')
+      td {{ usuario.permissao }}
+.form-group
+  button.btn.btn-primary(type='button', ng-click='share.window("createOrUpdateUsuario");')=__('Edit')
+  | 
+  button.btn.btn-danger(type='button', ng-click='usuario.$delete(); clearUsuario(); queryUsuario(); countUsuario(); share.window("listUsuario");')=__('Remove')
+  | 
+  button.btn.btn-default(type='button', ng-click='clearUsuario(); queryUsuario(); share.window("listUsuario")')=__('List')
