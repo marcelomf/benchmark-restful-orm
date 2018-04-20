@@ -1,0 +1,31 @@
+{
+  "name": "usuario",
+  "plural": "usuario",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "login": {
+      "type": "string"
+    },
+    "senha": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "permissao": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

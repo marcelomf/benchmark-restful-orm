@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "eventos": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "mysql://root:senha123@localhost/lb_eventos",
+    "database": "lb_eventos",
+    "password": "senha123",
+    "name": "eventos",
+    "user": "root",
+    "connector": "mysql"
+  }
+}
