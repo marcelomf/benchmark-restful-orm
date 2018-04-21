@@ -4,7 +4,6 @@ import (
 	"time"
 	"github.com/kataras/iris"
 	"github.com/go-xorm/xorm"
-	//_ "github.com/mattn/go-sqlite3"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -19,29 +18,27 @@ type Usuario struct {
 	UpdatedAt 	time.Time `xorm:"updated 'updated_at'" json:"updated_at"`
 }
 
-var orm *xorm.Engine
-
-func list(c iris.Context) {
+func List(c iris.Context) {
 	var usuarios []Usuario
 	orm.Find(&usuarios)
 	c.JSON(usuarios)
 }
 
-func get(c iris.Context) {
+func Get(c iris.Context) {
 	id := c.Params().Get("id")
 	var usuario Usuario
 	orm.Id(id).Get(&usuario)
 	c.JSON(usuario)
 }
 
-func save(c iris.Context) {
+func Save(c iris.Context) {
 	usuario := new(Usuario)
 	c.ReadJSON(&usuario)
 	orm.Insert(usuario)
 	c.JSON(usuario)
 }
 
-func update(c iris.Context) {
+func Update(c iris.Context) {
 	id := c.Params().Get("id")
 	var usuario Usuario
 	c.ReadJSON(&usuario)
@@ -49,11 +46,13 @@ func update(c iris.Context) {
 	c.JSON(usuario)
 }
 
-func delete(c iris.Context) {
+func Delete(c iris.Context) {
 	id := c.Params().Get("id")
 	orm.Id(id).Delete(&Usuario{})
 	c.JSON("{}")
 }
+
+var orm *xorm.Engine
 
 func main() {
 	app := iris.New()
@@ -74,11 +73,11 @@ func main() {
 		app.Logger().Fatalf("orm failed to initialized Usuario table: %v", err)
 	}
 
-	app.Get("/usuarios", list)
-	app.Post("/usuarios", save)
-	app.Get("/usuarios/{id:int}", get)
-	app.Put("/usuarios/{id:int}", update)
-	app.Delete("/usuarios/{id:int}", delete)
+	app.Get("/usuarios", List)
+	app.Post("/usuarios", Save)
+	app.Get("/usuarios/{id:int}", Get)
+	app.Put("/usuarios/{id:int}", Update)
+	app.Delete("/usuarios/{id:int}", Delete)
 
 	app.Run(iris.Addr(":8000"), iris.WithoutServerError(iris.ErrServerClosed))
 }

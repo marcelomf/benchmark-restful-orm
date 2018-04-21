@@ -1,39 +1,38 @@
 package main
 
 import (
-  //"time"
-  //"fmt"
+  "time"
 	"net/http"	
   "github.com/labstack/echo"
-  //"github.com/go-xorm/xorm"
   "github.com/jinzhu/gorm"
-  //_ "github.com/mattn/go-sqlite3"
   _ "github.com/go-sql-driver/mysql"
 )
 
 type Usuario struct {
-  ID        uint    `json:"id"`//
-	Nome      string  `json:"nome"`//
-	Login     string  `json:"login"`//
-	Senha     string  `json:"senha"`// 
-	Email     string  `json:"email"`// 
-	Permissao string  `json:"permissao"`// 
+  ID        uint    `gorm:"column:id" json:"id"`
+	Nome      string  `gorm:"column:nome" json:"nome"`
+	Login     string  `gorm:"column:login" json:"login"`
+	Senha     string  `gorm:"column:senha" json:"senha"` 
+	Email     string  `gorm:"column:email" json:"email"` 
+  Permissao string  `gorm:"column:permissao" json:"permissao"` 
+  CreatedAt 	time.Time `gorm:"column:created_at" json:"created_at"`
+	UpdatedAt 	time.Time `gorm:"column:updated_at" json:"updated_at"`
 }
 
-func list(c echo.Context) error {
+func List(c echo.Context) error {
   var usuarios []Usuario
   orm.Find(&usuarios)
   return c.JSON(http.StatusOK, usuarios)
 }
 
-func get(c echo.Context) error {
+func Get(c echo.Context) error {
   id := c.Param("id")
   var usuario Usuario
   orm.First(&usuario, id)
   return c.JSON(http.StatusOK, usuario)
 }
 
-func save(c echo.Context) error {
+func Save(c echo.Context) error {
   usuario := new(Usuario)
   if err := c.Bind(usuario); err != nil {
 		return err
@@ -42,7 +41,7 @@ func save(c echo.Context) error {
   return c.JSON(http.StatusCreated, usuario)
 }
 
-func update(c echo.Context) error {
+func Update(c echo.Context) error {
   id := c.Param("id")
   var usuario Usuario
   orm.First(&usuario, id)
@@ -53,7 +52,7 @@ func update(c echo.Context) error {
   return c.JSON(http.StatusOK, usuario)
 }
 
-func delete(c echo.Context) error {
+func Delete(c echo.Context) error {
   id := c.Param("id")
   var usuario Usuario
   orm.First(&usuario, id)
@@ -61,10 +60,12 @@ func delete(c echo.Context) error {
   return c.String(http.StatusOK, "{}")
 }
 
-var orm, errDb = gorm.Open("mysql", "root:senha123@tcp(localhost:3306)/eventos")
+var orm *gorm.DB;
 
 func main() {
   e := echo.New()
+
+  orm, errDb := gorm.Open("mysql", "root:senha123@tcp(localhost:3306)/eventos")
 
   if errDb != nil {
 		e.Logger.Fatal("orm failed to initialized: %v", errDb)
@@ -78,11 +79,11 @@ func main() {
 		return c.String(http.StatusOK, "Hello, World!")
   })
 
-  e.GET("/usuarios", list)
-  e.POST("/usuarios", save)
-  e.GET("/usuarios/:id", get)
-  e.PUT("/usuarios/:id", update)
-  e.DELETE("/usuarios/:id", delete)
+  e.GET("/usuarios", List)
+  e.POST("/usuarios", Save)
+  e.GET("/usuarios/:id", Get)
+  e.PUT("/usuarios/:id", Update)
+  e.DELETE("/usuarios/:id", Delete)
   
 	e.Logger.Fatal(e.Start(":8000"))
 }
