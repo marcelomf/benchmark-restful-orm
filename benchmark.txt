@@ -157,6 +157,19 @@ Statistics        Avg      Stdev        Max
   Throughput:   243.41KB/s
 
 
+DOTNET C. 2:
+Bombarding http://localhost:5000/usuarios for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       849.42     655.93    3651.05
+  Latency      573.91ms   400.05ms      2.13s
+  HTTP codes:
+    1xx - 0, 2xx - 8961, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:   464.32KB/s
+
+
 
 
 UPDATE:
@@ -327,3 +340,18 @@ Statistics        Avg      Stdev        Max
   Errors:
     the server closed connection before returning the first response byte. Make sure the server returns 'Connection: close' response header before closing the connection - 45
   Throughput:   128.15KB/s
+
+
+DOTNET C. 2:
+Bombarding http://localhost:5000/usuarios/2 for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       101.07     146.33     751.11
+  Latency         3.94s      3.31s     11.09s
+  HTTP codes:
+    1xx - 0, 2xx - 1333, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 173
+  Errors:
+    the server closed connection before returning the first response byte. Make sure the server returns 'Connection: close' response header before closing the connection - 173
+  Throughput:    81.58KB/s
