@@ -25,6 +25,21 @@ Statistics        Avg      Stdev        Max
   Throughput:   295.84KB/s
 
 
+LUMEN nginx php 7.2:
+Bombarding http://lumen.teste/usuarios/query for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       897.36    1164.28    8186.41
+  Latency      700.68ms      2.73s     27.51s
+  HTTP codes:
+    1xx - 0, 2xx - 6782, 3xx - 0, 4xx - 0, 5xx - 67
+    others - 2655
+  Errors:
+    the server closed connection before returning the first response byte. Make sure the server returns 'Connection: close' response header before closing the connection - 2655
+  Throughput:   206.69KB/s
+
+
 SYMFONY 4:
 Bombarding http://localhost:5000/usuarios for 10s using 500 connections
 [========================================================================================================================================================================================================================================] 10s
@@ -201,6 +216,21 @@ Statistics        Avg      Stdev        Max
     1xx - 0, 2xx - 7160, 3xx - 0, 4xx - 0, 5xx - 0
     others - 0
   Throughput:   276.47KB/s
+
+
+LUMEN nginx php 7.2:
+Bombarding http://lumen.teste/usuarios/2 for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       834.11     931.01    8781.38
+  Latency      638.53ms      2.21s     16.46s
+  HTTP codes:
+    1xx - 0, 2xx - 7024, 3xx - 0, 4xx - 0, 5xx - 25
+    others - 1886
+  Errors:
+    the server closed connection before returning the first response byte. Make sure the server returns 'Connection: close' response header before closing the connection - 1886
+  Throughput:   383.63KB/s
 
 
 SYMFONY 4:
