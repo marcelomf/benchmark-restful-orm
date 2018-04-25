@@ -18,6 +18,7 @@ service.count = async (req, res) => {
 service.get = async (req, res) => {
   try {
     let usuario = await Usuario.findOne({_id : req.params.id}).exec();
+    usuario.
     return res.json(usuario);
   } catch(err) {
     return res.json(event.newError(err).toJson());

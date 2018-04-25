@@ -1,23 +1,19 @@
 package main
 
 import (
-  //"time"
-  //"fmt"
 	"net/http"	
   "github.com/labstack/echo"
-  //"github.com/go-xorm/xorm"
   "github.com/jinzhu/gorm"
-  //_ "github.com/mattn/go-sqlite3"
   _ "github.com/go-sql-driver/mysql"
 )
 
 type Usuario struct {
-  ID        uint    `json:"id"`//
-	Nome      string  `json:"nome"`//
-	Login     string  `json:"login"`//
-	Senha     string  `json:"senha"`// 
-	Email     string  `json:"email"`// 
-	Permissao string  `json:"permissao"`// 
+  ID        uint    `json:"id"`
+	Nome      string  `json:"nome"`
+	Login     string  `json:"login"`
+	Senha     string  `json:"senha"`
+	Email     string  `json:"email"`
+	Permissao string  `json:"permissao"`
 }
 
 func list(c echo.Context) error {

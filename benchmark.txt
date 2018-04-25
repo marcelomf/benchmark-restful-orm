@@ -92,6 +92,19 @@ Statistics        Avg      Stdev        Max
   Throughput:    91.24KB/s
 
 
+SPRING BOOT:
+Bombarding http://localhost:8080/usuarios for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      1347.21     601.51    3295.29
+  Latency      362.95ms   297.81ms      1.60s
+  HTTP codes:
+    1xx - 0, 2xx - 13919, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     1.00MB/s
+
+
 GO ECHO GORM:
 Bombarding http://localhost:8000/usuarios for 10s using 500 connections
 [=======================================================================================================================================================================================================================================] 10s
@@ -144,7 +157,12 @@ Statistics        Avg      Stdev        Max
   Throughput:   243.41KB/s
 
 
+
+
 UPDATE:
+
+
+
 
 LUMEN:
 Bombarding http://localhost:8000/usuarios/1 for 10s using 500 connections
@@ -241,6 +259,19 @@ Statistics        Avg      Stdev        Max
   Errors:
     the server closed connection before returning the first response byte. Make sure the server returns 'Connection: close' response header before closing the connection - 30
   Throughput:    61.50KB/s
+
+
+SPRING BOOT:
+Bombarding http://localhost:8080/usuarios/2 for 10s using 500 connections
+[=======================================================================================================================================================================================================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      2127.15     586.02    4098.68
+  Latency      232.43ms   128.65ms   733.30ms
+  HTTP codes:
+    1xx - 0, 2xx - 21735, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     1.00MB/s
 
 
 GO ECHO GORM:
